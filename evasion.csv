@@ -1,0 +1,12 @@
+# attacker=192.168.200.130
+# target=192.168.200.131
+# offset=-0.8188
+# rtt=0.0270
+# gap=90
+trial,name,expected,start,end,command,note
+1,evade_brute,R-02,1793603915.399,1793604112.201,hydra -l osboxes -P /tmp/trials_s2s1m0rx/slow.txt -c 8 ssh://192.168.200.131,rc=0
+2,evade_scan,R-01,1793604202.360,1793604304.104,nmap -sS -Pn -n -p 1-100 --scan-delay 1s 192.168.200.131,rc=0
+3,evade_brute,R-02,1793604394.263,1793604581.206,hydra -l osboxes -P /tmp/trials_s2s1m0rx/slow.txt -c 8 ssh://192.168.200.131,rc=0
+4,evade_brute,R-02,1793604671.365,1793604858.197,hydra -l osboxes -P /tmp/trials_s2s1m0rx/slow.txt -c 8 ssh://192.168.200.131,rc=0
+5,evade_scan,R-01,1793604948.359,1793605049.744,nmap -sS -Pn -n -p 1-100 --scan-delay 1s 192.168.200.131,rc=0
+6,evade_scan,R-01,1793605139.903,1793605241.276,nmap -sS -Pn -n -p 1-100 --scan-delay 1s 192.168.200.131,rc=0

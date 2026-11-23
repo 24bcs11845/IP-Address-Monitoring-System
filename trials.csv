@@ -1,0 +1,31 @@
+# attacker=192.168.200.130
+# target=192.168.200.131
+# offset=-1.2563
+# rtt=0.0300
+# gap=90
+trial,name,expected,start,end,command,note
+1,scan_15,none,1793533233.172,1793533233.962,nmap -sS -Pn -n -p 1-15 192.168.200.131,rc=0
+2,typo_logins,none,1793533324.127,1793533335.171,hydra -l osboxes -P /tmp/trials_3raykc4h/typo.txt -t 1 ssh://192.168.200.131,rc=0
+3,brute_force,R-02,1793533425.327,1793533481.362,hydra -l osboxes -P /tmp/trials_3raykc4h/pw.txt -t 4 ssh://192.168.200.131,rc=0
+4,repeat_conn,none,1793533571.531,1793533573.936,python socket x40 -> 192.168.200.131:22,40/40 connected
+5,repeat_conn,none,1793533664.089,1793533666.175,python socket x40 -> 192.168.200.131:22,40/40 connected
+6,scan_5,none,1793533756.335,1793533756.775,"nmap -sS -Pn -n -p 22,80,443,3306,8080 192.168.200.131",rc=0
+7,brute_force,R-02,1793533846.962,1793533902.985,hydra -l osboxes -P /tmp/trials_3raykc4h/pw.txt -t 4 ssh://192.168.200.131,rc=0
+8,repeat_conn,none,1793533993.148,1793533995.240,python socket x40 -> 192.168.200.131:22,40/40 connected
+9,brute_force,R-02,1793534085.398,1793534139.742,hydra -l osboxes -P /tmp/trials_3raykc4h/pw.txt -t 4 ssh://192.168.200.131,rc=0
+10,brute_force,R-02,1793534229.897,1793534281.083,hydra -l osboxes -P /tmp/trials_3raykc4h/pw.txt -t 4 ssh://192.168.200.131,rc=255
+11,scan_15,none,1793534371.241,1793534371.517,nmap -sS -Pn -n -p 1-15 192.168.200.131,rc=0
+12,scan_100,R-01,1793534461.677,1793534461.973,nmap -sS -Pn -n -p 1-100 192.168.200.131,rc=0
+13,scan_5,none,1793534552.139,1793534552.538,"nmap -sS -Pn -n -p 22,80,443,3306,8080 192.168.200.131",rc=0
+14,brute_force,R-02,1793534642.715,1793534697.073,hydra -l osboxes -P /tmp/trials_3raykc4h/pw.txt -t 4 ssh://192.168.200.131,rc=0
+15,scan_15,none,1793534787.240,1793534787.564,nmap -sS -Pn -n -p 1-15 192.168.200.131,rc=0
+16,typo_logins,none,1793534877.728,1793534888.243,hydra -l osboxes -P /tmp/trials_3raykc4h/typo.txt -t 1 ssh://192.168.200.131,rc=0
+17,scan_16,R-01,1793534978.398,1793534978.749,nmap -sS -Pn -n -p 1-16 192.168.200.131,rc=0
+18,scan_100,R-01,1793535068.898,1793535069.217,nmap -sS -Pn -n -p 1-100 192.168.200.131,rc=0
+19,scan_5,none,1793535159.383,1793535159.706,"nmap -sS -Pn -n -p 22,80,443,3306,8080 192.168.200.131",rc=0
+20,scan_100,R-01,1793535249.874,1793535250.205,nmap -sS -Pn -n -p 1-100 192.168.200.131,rc=0
+21,scan_100,R-01,1793535340.369,1793535340.719,nmap -sS -Pn -n -p 1-100 192.168.200.131,rc=0
+22,typo_logins,none,1793535430.881,1793535439.726,hydra -l osboxes -P /tmp/trials_3raykc4h/typo.txt -t 1 ssh://192.168.200.131,rc=0
+23,scan_16,R-01,1793535529.891,1793535530.206,nmap -sS -Pn -n -p 1-16 192.168.200.131,rc=0
+24,scan_100,R-01,1793535620.372,1793535620.718,nmap -sS -Pn -n -p 1-100 192.168.200.131,rc=0
+25,scan_16,R-01,1793535710.889,1793535711.204,nmap -sS -Pn -n -p 1-16 192.168.200.131,rc=0
